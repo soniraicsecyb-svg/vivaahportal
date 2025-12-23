@@ -258,7 +258,10 @@
     <!-- Login Modal (Fixed position, Hidden by default) -->
     <div id="login-modal" class="fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center hidden">
          <div id="auth-container" class="bg-white shadow-2xl rounded-xl w-full max-w-md overflow-hidden transition-all duration-300 relative">
-            <button onclick="closeLoginModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 z-10 p-2 rounded-full hover:bg-gray-50 transition">&times;</button>
+          <button onclick="window.location.href='main.html'">
+  Go to Main Page
+</button>
+
             <!-- Logo/Header (Modal Content) -->
             <header class="p-6 text-center border-b border-gray-100">
                 <h2 class="text-3xl font-extrabold text-primary">Join VivaahPortal</h2>
@@ -267,12 +270,10 @@
 
             <!-- Auth Tabs -->
             <div class="flex border-b border-gray-100">
-                <button id="login-tab" class="flex-1 py-3 text-center text-gray-600 font-medium active-tab" onclick="showTab('login')">
-                    Log In
-                </button>
-                <button id="signup-tab" class="flex-1 py-3 text-center text-gray-600 font-medium" onclick="showTab('signup')">
-                    Sign Up
-                </button>
+               <button onclick="window.location.href='main.html'">
+  Go to Main Page
+</button>
+
             </div>
 
             <!-- Auth Forms -->
@@ -292,16 +293,18 @@
 
                 <!-- Login View -->
                 <div id="login-view" class="mt-6">
-                    <button onclick="handleLogin()" class="btn-primary w-full p-3 rounded-lg text-white bg-primary text-lg font-semibold">
-                        Log In to Your Account
-                    </button>
+                    <button onclick="window.location.href='main.html'">
+  Go to Main Page
+</button>
+
                 </div>
 
                 <!-- Signup View (Hidden by default) -->
                 <div id="signup-view" class="mt-6 hidden">
-                     <button onclick="handleSignup()" class="btn-primary w-full p-3 rounded-lg text-white bg-pink-500 text-lg font-semibold">
-                        Create My Account
-                    </button>
+                   <button onclick="window.location.href='main.html'">
+  Go to Main Page
+</button>
+
                 </div>
                 
                 <!-- Logout Button (Shown after login, for convenience) -->
@@ -608,4 +611,5 @@
         };
     </script>
 </body>
+
 </html>
