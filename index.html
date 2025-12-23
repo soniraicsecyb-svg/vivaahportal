@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VivaahPortal | All-in-One Wedding Vendor Marketplace</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Inter font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <!-- Load Lucide Icons for features -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Custom styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f3f0; /* Light, elegant background */
+        }
+        .text-primary { color: #f653a6; }
+        .bg-primary { background-color: #f653a6; }
+        .btn-primary {
+            transition: all 0.2s;
+            box-shadow: 0 4px 15px rgba(246, 83, 166, 0.4);
+        }
+        .btn-primary:hover {
+            background-color: #e54295;
+            box-shadow: 0 6px 20px rgba(246, 83, 166, 0.5);
+            transform: translateY(-2px);
+        }
+        .input-field:focus {
+            border-color: #f653a6;
+            box-shadow: 0 0 0 1px #f653a6;
+        }
+        .feature-card {
+            transition: transform 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- Navbar -->
+    <header class="bg-white sticky top-0 z-20 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <h1 class="text-3xl font-extrabold text-primary">VivaahPortal</h1>
+            <nav class="hidden md:flex space-x-8 text-gray-600 font-medium">
+                <a href="#features" class="hover:text-primary transition duration-150">Features</a>
+                <a href="#how-it-works" class="hover:text-primary transition duration-150">Process</a>
+                <a href="#trust" class="hover:text-primary transition duration-150">Reviews</a>
+            </nav>
+            <button onclick="openLoginModal()" class="hidden md:block px-6 py-2 border border-primary text-primary rounded-full hover:bg-pink-50 transition duration-150">
+                Sign In
+            </button>
+            <button onclick="openLoginModal()" class="md:hidden p-2 rounded-full text-primary hover:bg-pink-50 transition duration-150">
+                <i data-lucide="user" class="w-6 h-6"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- 1. Hero Section (Explains what it is & Converts) -->
+    <section id="hero" class="bg-[#f7f3f0] py-16 md:py-32 flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
+            <!-- Left: Headline & CTA -->
+            <div>
+                <span class="text-sm font-semibold uppercase tracking-widest text-primary">The Future of Wedding Planning</span>
+                <h2 class="mt-4 text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight">
+                    Find Your Perfect Wedding <span class="text-primary">Vendors</span> in One Click.
+                </h2>
+                <p class="mt-6 text-xl text-gray-600">
+                    VivaahPortal is the all-in-one marketplace for Venues, Decorators, Photographers, and Videographers. Simplify your planning, save time, and book trusted professionals instantly.
+                </p>
+                <button onclick="openLoginModal()" class="btn-primary mt-10 px-10 py-4 bg-primary text-white text-xl font-bold rounded-full shadow-lg">
+                    Start Planning for Free
+                </button>
+                <div class="mt-8 flex items-center space-x-2 text-gray-500">
+                    <i data-lucide="check-circle" class="w-5 h-5 text-green-500"></i>
+                    <span class="font-medium">Trusted by 1000+ happy couples</span>
+                </div>
+            </div>
+            <!-- Right: Mockup Image/Illustration -->
+            <div class="hidden md:block">
+                 <img src="https://placehold.co/600x400/f653a6/ffffff?text=Vendor+Marketplace+Mockup" 
+                      alt="VivaahPortal vendor listing interface" 
+                      class="w-full h-auto rounded-xl shadow-2xl ring-4 ring-white/50 transform hover:scale-[1.01] transition-transform duration-500">
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Features/Benefits Section (Shows Benefits) -->
+    <section id="features" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h3 class="text-4xl font-bold text-gray-800 mb-4">Why Choose VivaahPortal?</h3>
+            <p class="text-lg text-gray-600 mb-12 max-w-3xl mx-auto">We solve the headache of juggling multiple vendors and platforms.</p>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Benefit 1: Save Time -->
+                <div class="feature-card bg-gray-50 p-6 rounded-xl shadow-md text-left border-t-4 border-primary">
+                    <i data-lucide="clock" class="w-8 h-8 text-primary mb-3"></i>
+                    <h4 class="text-xl font-semibold text-gray-900">Save Precious Time</h4>
+                    <p class="mt-2 text-gray-600">Browse verified venues, decorators, and photographers simultaneously. No more endless searching on separate websites.</p>
+                </div>
+                <!-- Benefit 2: Quality Assurance (Trust) -->
+                <div class="feature-card bg-gray-50 p-6 rounded-xl shadow-md text-left border-t-4 border-primary">
+                    <i data-lucide="award" class="w-8 h-8 text-primary mb-3"></i>
+                    <h4 class="text-xl font-semibold text-gray-900">Vetted & Trusted Vendors</h4>
+                    <p class="mt-2 text-gray-600">Every professional on our platform is hand-picked and verified, ensuring quality and reliability for your big day.</p>
+                </div>
+                <!-- Benefit 3: Budget Control -->
+                <div class="feature-card bg-gray-50 p-6 rounded-xl shadow-md text-left border-t-4 border-primary">
+                    <i data-lucide="wallet" class="w-8 h-8 text-primary mb-3"></i>
+                    <h4 class="text-xl font-semibold text-gray-900">Transparent Pricing</h4>
+                    <p class="mt-2 text-gray-600">Compare packages and prices directly without hidden fees. Stay in control of your wedding budget from start to finish.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. How It Works (Explains & Builds Trust) -->
+    <section id="how-it-works" class="py-20 bg-[#f7f3f0]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h3 class="text-4xl font-bold text-gray-800 mb-4">Your Simple 3-Step Planning Process</h3>
+            <p class="text-lg text-gray-600 mb-12 max-w-3xl mx-auto">Wedding planning shouldn't be stressful. We made it effortless.</p>
+            
+            <div class="relative flex justify-center">
+                <!-- Connector Line (Hidden on Mobile) -->
+                <div class="hidden md:block absolute top-1/4 h-1 bg-pink-200 w-3/4 transform translate-y-[-50%]"></div>
+
+                <div class="grid md:grid-cols-3 gap-12 text-left">
+                    <!-- Step 1 -->
+                    <div class="relative p-6 bg-white rounded-xl shadow-lg border border-pink-100">
+                        <div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary text-white text-xl font-bold mb-4 ring-4 ring-pink-300 ring-opacity-50">1</div>
+                        <h4 class="text-2xl font-semibold text-gray-900">Search & Filter</h4>
+                        <p class="mt-2 text-gray-600">Input your budget, date, and location to see instant matches across all categories.</p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="relative p-6 bg-white rounded-xl shadow-lg border border-pink-100">
+                        <div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary text-white text-xl font-bold mb-4 ring-4 ring-pink-300 ring-opacity-50">2</div>
+                        <h4 class="text-2xl font-semibold text-gray-900">Compare & Connect</h4>
+                        <p class="mt-2 text-gray-600">View detailed profiles, portfolios, and real reviews. Chat directly with vendors in-app.</p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="relative p-6 bg-white rounded-xl shadow-lg border border-pink-100">
+                        <div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary text-white text-xl font-bold mb-4 ring-4 ring-pink-300 ring-opacity-50">3</div>
+                        <h4 class="text-2xl font-semibold text-gray-900">Secure Your Booking</h4>
+                        <p class="mt-2 text-gray-600">Book your entire wedding team—venue, decor, photo/video—with confidence through one platform.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Vendor Category Showcase (Explains) -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h3 class="text-4xl font-bold text-gray-800 mb-4">Everything You Need, Organized.</h3>
+            <p class="text-lg text-gray-600 mb-12 max-w-3xl mx-auto">Explore our premium vendor categories.</p>
+
+            <div class="grid md:grid-cols-4 gap-6">
+                <!-- Venues -->
+                <div class="bg-gray-50 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+                    <img src="https://placehold.co/400x250/fdd1d1/f653a6?text=Venues" class="w-full h-40 object-cover" alt="Wedding Venues">
+                    <div class="p-4">
+                        <h4 class="text-xl font-semibold text-gray-900">Wedding Halls</h4>
+                        <p class="text-sm text-gray-600">Ballrooms, Gardens, & unique spaces.</p>
+                    </div>
+                </div>
+                <!-- Decoration -->
+                <div class="bg-gray-50 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+                    <img src="https://placehold.co/400x250/e9d5ff/f653a6?text=Decor" class="w-full h-40 object-cover" alt="Wedding Decoration">
+                    <div class="p-4">
+                        <h4 class="text-xl font-semibold text-gray-900">Decoration Experts</h4>
+                        <p class="text-sm text-gray-600">Floral, Lighting, and Theme Design.</p>
+                    </div>
+                </div>
+                <!-- Photographers -->
+                <div class="bg-gray-50 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+                    <img src="https://placehold.co/400x250/c0fdfd/f653a6?text=Photo" class="w-full h-40 object-cover" alt="Wedding Photographers">
+                    <div class="p-4">
+                        <h4 class="text-xl font-semibold text-gray-900">Photographers</h4>
+                        <p class="text-sm text-gray-600">Candid, Traditional, and Drone Services.</p>
+                    </div>
+                </div>
+                <!-- Videographers -->
+                <div class="bg-gray-50 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+                    <img src="https://placehold.co/400x250/ffecb3/f653a6?text=Video" class="w-full h-40 object-cover" alt="Wedding Videographers">
+                    <div class="p-4">
+                        <h4 class="text-xl font-semibold text-gray-900">Videographers</h4>
+                        <p class="text-sm text-gray-600">Cinematic highlight reels & full features.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 5. Testimonials/Trust (Builds Trust) -->
+    <section id="trust" class="py-20 bg-[#f7f3f0]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h3 class="text-4xl font-bold text-gray-800 mb-4">What Our Couples Say</h3>
+            <p class="text-lg text-gray-600 mb-12 max-w-3xl mx-auto">Real experiences from couples who simplified their wedding planning with us.</p>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-xl transform rotate-1 transition duration-300 hover:rotate-0">
+                    <i data-lucide="quote" class="w-8 h-8 text-primary mb-3"></i>
+                    <p class="text-gray-700 italic">"Finding all three major vendors (venue, decor, photo) in one place saved us months of stress. VivaahPortal is a game-changer!"</p>
+                    <p class="mt-4 font-semibold text-gray-900">— Anjali & Rohan, Mumbai</p>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-xl transform rotate-[-1deg] transition duration-300 hover:rotate-0">
+                    <i data-lucide="quote" class="w-8 h-8 text-primary mb-3"></i>
+                    <p class="text-gray-700 italic">"The transparency in pricing made budgeting so much easier. We felt confident booking vetted professionals."</p>
+                    <p class="mt-4 font-semibold text-gray-900">— Sarah & David, Bangalore</p>
+                </div>
+                 <!-- Testimonial 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-xl transform rotate-2 transition duration-300 hover:rotate-0">
+                    <i data-lucide="quote" class="w-8 h-8 text-primary mb-3"></i>
+                    <p class="text-gray-700 italic">"The filter tools are incredible. We found the perfect rustic venue and decor package instantly. Highly recommend!"</p>
+                    <p class="mt-4 font-semibold text-gray-900">— Priya & Vikram, Delhi</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Final CTA Section (Converts) -->
+    <section class="py-24 bg-primary text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h3 class="text-5xl font-extrabold mb-4 leading-tight">Ready to Plan Your Dream Wedding?</h3>
+            <p class="text-xl font-light mb-10">Stop searching, start booking. Your entire vendor team awaits.</p>
+             <button onclick="openLoginModal()" class="btn-primary px-12 py-5 bg-white text-primary text-xl font-bold rounded-full shadow-lg hover:bg-gray-100">
+                Sign Up and Get Started
+            </button>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="font-semibold text-xl mb-4 text-primary">VivaahPortal</p>
+            <div class="flex justify-center space-x-6 text-sm">
+                <a href="#" class="hover:text-primary transition duration-150">About Us</a>
+                <a href="#" class="hover:text-primary transition duration-150">Vendor Sign Up</a>
+                <a href="#" class="hover:text-primary transition duration-150">Privacy Policy</a>
+                <a href="#" class="hover:text-primary transition duration-150">Contact</a>
+            </div>
+            <p class="mt-8 text-xs text-gray-500">
+                © 2025 VivaahPortal. All rights reserved. Simplifying weddings, one successful booking at a time.
+            </p>
+        </div>
+    </footer>
+
+
+    <!-- Login Modal (Fixed position, Hidden by default) -->
+    <div id="login-modal" class="fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center hidden">
+         <div id="auth-container" class="bg-white shadow-2xl rounded-xl w-full max-w-md overflow-hidden transition-all duration-300 relative">
+            <button onclick="closeLoginModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 z-10 p-2 rounded-full hover:bg-gray-50 transition">&times;</button>
+            <!-- Logo/Header (Modal Content) -->
+            <header class="p-6 text-center border-b border-gray-100">
+                <h2 class="text-3xl font-extrabold text-primary">Join VivaahPortal</h2>
+                <p id="user-display-status" class="text-sm text-gray-500 mt-1">Plan your wedding effortlessly.</p>
+            </header>
+
+            <!-- Auth Tabs -->
+            <div class="flex border-b border-gray-100">
+                <button id="login-tab" class="flex-1 py-3 text-center text-gray-600 font-medium active-tab" onclick="showTab('login')">
+                    Log In
+                </button>
+                <button id="signup-tab" class="flex-1 py-3 text-center text-gray-600 font-medium" onclick="showTab('signup')">
+                    Sign Up
+                </button>
+            </div>
+
+            <!-- Auth Forms -->
+            <div class="p-8">
+
+                <!-- Shared Email and Password fields -->
+                <div class="space-y-4">
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                        <input type="email" id="email" class="input-field w-full p-3 border border-gray-300 rounded-lg outline-none" placeholder="you@example.com">
+                    </div>
+                    <div>
+                        <label for="password" class="block text-sm font-medium text-gray-700 mb-1">Password (min 6 chars)</label>
+                        <input type="password" id="password" class="input-field w-full p-3 border border-gray-300 rounded-lg outline-none" placeholder="••••••••">
+                    </div>
+                </div>
+
+                <!-- Login View -->
+                <div id="login-view" class="mt-6">
+                    <button onclick="handleLogin()" class="btn-primary w-full p-3 rounded-lg text-white bg-primary text-lg font-semibold">
+                        Log In to Your Account
+                    </button>
+                </div>
+
+                <!-- Signup View (Hidden by default) -->
+                <div id="signup-view" class="mt-6 hidden">
+                     <button onclick="handleSignup()" class="btn-primary w-full p-3 rounded-lg text-white bg-pink-500 text-lg font-semibold">
+                        Create My Account
+                    </button>
+                </div>
+                
+                <!-- Logout Button (Shown after login, for convenience) -->
+                <div id="logout-view" class="mt-6 hidden">
+                     <p class="text-center text-sm text-gray-600 mb-4">You are currently logged in.</p>
+                     <button onclick="handleLogout()" class="w-full p-3 rounded-lg text-white bg-red-500 text-lg font-semibold hover:bg-red-600 transition">
+                        Logout
+                    </button>
+                </div>
+
+                <!-- Message Box -->
+                <div id="message-box" class="mt-4 p-3 rounded-lg text-center font-medium hidden"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Firebase SDK Imports -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // Global Firebase variables accessible to the window scope
+        window.firebaseApp = null;
+        window.auth = null;
+        window.db = null;
+        window.currentUserId = null;
+
+        // --- Initialization and Utility Functions ---
+
+        /**
+         * Renders Lucide icons on the page.
+         */
+        window.onload = function() {
+            lucide.createIcons();
+            // Start Firebase setup after icons are rendered
+            setupFirebase();
+        };
+
+        /**
+         * Basic email format validation.
+         * @param {string} email - The email string to validate.
+         * @returns {boolean} True if the email looks valid, false otherwise.
+         */
+        function isValidEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(String(email).toLowerCase());
+        }
+
+        /**
+         * Displays a message in the UI message box.
+         * @param {string} message - The message content.
+         * @param {boolean} isError - True for error (red), false for success (blue).
+         */
+        function showMessage(message, isError) {
+            const box = document.getElementById('message-box');
+            box.textContent = message;
+            box.className = 'mt-4 p-3 rounded-lg text-center font-medium'; // Reset classes
+            if (isError) {
+                box.classList.add('bg-red-100', 'text-red-700');
+            } else {
+                box.classList.add('bg-blue-100', 'text-blue-700');
+            }
+            box.classList.remove('hidden');
+        }
+
+        /**
+         * Hides the message box.
+         */
+        function hideMessage() {
+            document.getElementById('message-box').classList.add('hidden');
+        }
+
+        /**
+         * Opens the Login/Signup Modal.
+         */
+        window.openLoginModal = () => {
+            document.getElementById('login-modal').classList.remove('hidden');
+            // Ensure correct view is shown based on auth state
+            if (window.auth.currentUser && !window.auth.currentUser.isAnonymous) {
+                showModalAuthView('logout');
+            } else {
+                showModalAuthView('login');
+            }
+        };
+
+        /**
+         * Closes the Login/Signup Modal.
+         */
+        window.closeLoginModal = () => {
+            document.getElementById('login-modal').classList.add('hidden');
+            hideMessage();
+        };
+        
+        /**
+         * Controls which view (login/signup/logout) is visible in the modal.
+         * @param {string} viewName - 'login', 'signup', or 'logout'
+         */
+        function showModalAuthView(viewName) {
+            const views = ['login-view', 'signup-view', 'logout-view'];
+            views.forEach(id => document.getElementById(id).classList.add('hidden'));
+
+            if (viewName === 'login') {
+                document.getElementById('login-view').classList.remove('hidden');
+                document.getElementById('login-tab').classList.add('active-tab', 'text-primary', 'border-b-2', 'border-primary');
+                document.getElementById('signup-tab').classList.remove('active-tab', 'text-primary', 'border-b-2', 'border-primary');
+            } else if (viewName === 'signup') {
+                document.getElementById('signup-view').classList.remove('hidden');
+                document.getElementById('signup-tab').classList.add('active-tab', 'text-primary', 'border-b-2', 'border-primary');
+                document.getElementById('login-tab').classList.remove('active-tab', 'text-primary', 'border-b-2', 'border-primary');
+            } else if (viewName === 'logout') {
+                document.getElementById('logout-view').classList.remove('hidden');
+                // Hide tabs when showing logout view
+                document.getElementById('login-tab').classList.remove('active-tab', 'text-primary', 'border-b-2', 'border-primary');
+                document.getElementById('signup-tab').classList.remove('active-tab', 'text-primary', 'border-b-2', 'border-primary');
+            }
+        }
+
+
+        /**
+         * Updates the user status text in the modal header.
+         * @param {Object|null} user - The Firebase User object or null.
+         */
+        function updateModalStatus(user) {
+            const statusEl = document.getElementById('user-display-status');
+            const headerTitle = document.querySelector('#auth-container h2');
+
+            if (user && user.isAnonymous === false) {
+                headerTitle.textContent = "Welcome Back!";
+                statusEl.textContent = `You are logged in as ${user.email}.`;
+                // If the modal is open, switch to the logout view
+                if (!document.getElementById('login-modal').classList.contains('hidden')) {
+                    showModalAuthView('logout');
+                }
+            } else {
+                headerTitle.textContent = "Join VivaahPortal";
+                statusEl.textContent = 'Plan your wedding effortlessly.';
+            }
+        }
+
+
+        /**
+         * Sets up the Firebase application, authentication, and Firestore.
+         */
+        async function setupFirebase() {
+            try {
+                // Global variables are provided by the canvas environment
+                const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+                const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : null;
+                const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+
+                if (!firebaseConfig) {
+                    throw new Error("Firebase configuration is missing.");
+                }
+
+                window.firebaseApp = initializeApp(firebaseConfig);
+                window.auth = getAuth(window.firebaseApp);
+                window.db = getFirestore(window.firebaseApp);
+
+                // Initial Authentication Check (sign in first, then listen)
+                if (initialAuthToken) {
+                    await signInWithCustomToken(window.auth, initialAuthToken);
+                } else {
+                    await signInAnonymously(window.auth);
+                }
+
+                // Listen for authentication state changes and update the sidebar
+                onAuthStateChanged(window.auth, (user) => {
+                    window.currentUserId = user ? user.uid : null;
+                    updateModalStatus(user);
+                });
+
+            } catch (error) {
+                console.error("Firebase setup failed:", error);
+                showMessage(`Initialization Error: ${error.message}`, true);
+            }
+        }
+
+        // --- Auth Handlers ---
+
+        /**
+         * Toggles between the Login and Signup tabs within the modal.
+         * @param {string} tabName - 'login' or 'signup'
+         */
+        window.showTab = (tabName) => {
+            hideMessage();
+            if (window.auth.currentUser && !window.auth.currentUser.isAnonymous) {
+                // If already logged in, show logout view instead of switching tabs
+                showModalAuthView('logout');
+                return;
+            }
+            showModalAuthView(tabName);
+        };
+
+
+        /**
+         * Handles user login with email and password.
+         */
+        window.handleLogin = async () => {
+            hideMessage();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value.trim();
+
+            if (!email || !password) {
+                showMessage("Please enter both email and password.", true);
+                return;
+            }
+
+            if (!isValidEmail(email)) {
+                showMessage("The email address format is invalid.", true);
+                return;
+            }
+
+            try {
+                await signInWithEmailAndPassword(window.auth, email, password);
+                showMessage("Login successful! You can now access your dashboard.", false);
+                setTimeout(window.closeLoginModal, 1500); // Close modal after successful login
+            } catch (error) {
+                console.error("Login Error:", error);
+                let errorMessage = "Login failed. Please check your credentials.";
+                
+                if (error.code === 'auth/operation-not-allowed') {
+                    errorMessage = "Authentication provider not enabled. Enable **Email/Password** in your Firebase console.";
+                } else if (error.code === 'auth/user-not-found' || error.code === 'auth/wrong-password') {
+                    errorMessage = "Invalid email or password.";
+                } else if (error.code === 'auth/invalid-email') {
+                    errorMessage = "Invalid email format.";
+                }
+                showMessage(errorMessage, true);
+            }
+        };
+
+        /**
+         * Handles user registration with email and password.
+         */
+        window.handleSignup = async () => {
+            hideMessage();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value.trim();
+
+            if (!email || !password) {
+                showMessage("Please enter both email and password.", true);
+                return;
+            }
+            
+            if (!isValidEmail(email)) {
+                showMessage("The email address format is invalid.", true);
+                return;
+            }
+
+            if (password.length < 6) {
+                showMessage("Password must be at least 6 characters long.", true);
+                return;
+            }
+
+            try {
+                const userCredential = await createUserWithEmailAndPassword(window.auth, email, password);
+                const user = userCredential.user;
+                const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+
+                // Save basic user data to Firestore immediately after signup
+                const userDocRef = doc(window.db, `artifacts/${appId}/users/${user.uid}/profile/details`);
+                await setDoc(userDocRef, {
+                    email: user.email,
+                    createdAt: new Date().toISOString(),
+                    userRole: 'customer' // Default role
+                });
+
+                showMessage("Account created successfully! Welcome to VivaahPortal.", false);
+                setTimeout(window.closeLoginModal, 1500); // Close modal after successful signup
+            } catch (error) {
+                console.error("Signup Error:", error);
+                let errorMessage = "Signup failed.";
+
+                if (error.code === 'auth/operation-not-allowed') {
+                    errorMessage = "Authentication provider not enabled. Enable **Email/Password** in your Firebase console.";
+                } else if (error.code === 'auth/email-already-in-use') {
+                    errorMessage = "This email is already in use. Try logging in.";
+                } else if (error.code === 'auth/weak-password') {
+                    errorMessage = "Password is too weak. Must be 6+ characters.";
+                }
+                showMessage(errorMessage, true);
+            }
+        };
+
+        /**
+         * Handles user logout.
+         */
+        window.handleLogout = async () => {
+            try {
+                await signOut(window.auth);
+                showMessage("You have been signed out.", false);
+                // Switch modal back to login view after logout
+                showModalAuthView('login');
+                // Clear inputs
+                document.getElementById('email').value = '';
+                document.getElementById('password').value = '';
+                
+            } catch (error) {
+                console.error("Logout Error:", error);
+                showMessage("Logout failed.", true);
+            }
+        };
+    </script>
+</body>
+</html>
