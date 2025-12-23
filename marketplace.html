@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Marketplace | VivaahPortal</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Inter font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <!-- Load Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fcfaf8;
+        }
+        .text-primary { color: #f653a6; }
+        .bg-primary { background-color: #f653a6; }
+        .border-primary { border-color: #f653a6; }
+        
+        .vendor-card {
+            transition: all 0.3s ease;
+        }
+        .vendor-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+        }
+        .filter-chip {
+            transition: all 0.2s;
+        }
+        .filter-chip.active {
+            background-color: #f653a6;
+            color: white;
+            border-color: #f653a6;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col text-gray-800">
+
+    <!-- Navigation -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-pink-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2 cursor-pointer" onclick="window.location.href='index.html'">
+                <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+                    <i data-lucide="heart" class="text-white w-6 h-6 fill-current"></i>
+                </div>
+                <h1 class="text-2xl font-black text-gray-900 tracking-tight">Vivaah<span class="text-primary">Portal</span></h1>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button class="p-2 text-gray-500 hover:text-primary transition">
+                    <i data-lucide="search" class="w-6 h-6"></i>
+                </button>
+                <button class="px-6 py-2.5 bg-primary text-white font-bold rounded-full shadow-md hover:bg-pink-600 transition text-sm">
+                    My Planner
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Marketplace Header -->
+    <section class="bg-white pt-12 pb-8 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl font-black text-gray-900 mb-6">Explore Vendors</h2>
+            
+            <!-- Category Filter Chips -->
+            <div class="flex space-x-4 overflow-x-auto pb-4 no-scrollbar">
+                <button class="filter-chip active flex items-center space-x-2 px-6 py-2.5 rounded-full border border-gray-200 font-bold whitespace-nowrap">
+                    <i data-lucide="layout-grid" class="w-4 h-4"></i>
+                    <span>All Categories</span>
+                </button>
+                <button class="filter-chip flex items-center space-x-2 px-6 py-2.5 rounded-full border border-gray-200 font-bold whitespace-nowrap hover:border-primary hover:text-primary">
+                    <i data-lucide="home" class="w-4 h-4"></i>
+                    <span>Venues</span>
+                </button>
+                <button class="filter-chip flex items-center space-x-2 px-6 py-2.5 rounded-full border border-gray-200 font-bold whitespace-nowrap hover:border-primary hover:text-primary">
+                    <i data-lucide="palette" class="w-4 h-4"></i>
+                    <span>Decorators</span>
+                </button>
+                <button class="filter-chip flex items-center space-x-2 px-6 py-2.5 rounded-full border border-gray-200 font-bold whitespace-nowrap hover:border-primary hover:text-primary">
+                    <i data-lucide="camera" class="w-4 h-4"></i>
+                    <span>Photography</span>
+                </button>
+                <button class="filter-chip flex items-center space-x-2 px-6 py-2.5 rounded-full border border-gray-200 font-bold whitespace-nowrap hover:border-primary hover:text-primary">
+                    <i data-lucide="video" class="w-4 h-4"></i>
+                    <span>Videography</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Area -->
+    <main class="max-w-7xl mx-auto px-6 py-12 grid lg:grid-cols-4 gap-8">
+        
+        <!-- Sidebar Filters -->
+        <aside class="lg:col-span-1 space-y-8">
+            <div>
+                <h4 class="text-sm font-black uppercase tracking-widest text-gray-400 mb-4">Location</h4>
+                <select class="w-full p-3 rounded-xl border border-gray-200 bg-white outline-none focus:ring-2 focus:ring-pink-200">
+                    <option>Mumbai, Maharashtra</option>
+                    <option>Delhi, NCR</option>
+                    <option>Bangalore, Karnataka</option>
+                    <option>Jaipur, Rajasthan</option>
+                </select>
+            </div>
+
+            <div>
+                <h4 class="text-sm font-black uppercase tracking-widest text-gray-400 mb-4">Budget Range</h4>
+                <div class="space-y-3">
+                    <label class="flex items-center space-x-3 cursor-pointer">
+                        <input type="checkbox" class="w-5 h-5 accent-primary rounded">
+                        <span class="text-gray-600">Economy (Under ₹1L)</span>
+                    </label>
+                    <label class="flex items-center space-x-3 cursor-pointer">
+                        <input type="checkbox" class="w-5 h-5 accent-primary rounded" checked>
+                        <span class="text-gray-600">Premium (₹1L - ₹5L)</span>
+                    </label>
+                    <label class="flex items-center space-x-3 cursor-pointer">
+                        <input type="checkbox" class="w-5 h-5 accent-primary rounded">
+                        <span class="text-gray-600">Luxury (Above ₹5L)</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="p-6 bg-pink-50 rounded-2xl border border-pink-100">
+                <h5 class="font-bold text-gray-900 mb-2">Need help choosing?</h5>
+                <p class="text-sm text-gray-600 mb-4">Our wedding experts can help you shortlist vendors based on your specific needs.</p>
+                <button class="w-full py-2 bg-white text-primary border border-primary font-bold rounded-lg hover:bg-primary hover:text-white transition">
+                    Talk to Expert
+                </button>
+            </div>
+        </aside>
+
+        <!-- Vendor Listings -->
+        <section class="lg:col-span-3">
+            <div class="flex justify-between items-center mb-8">
+                <p class="text-gray-500 font-medium">Showing <span class="text-gray-900 font-bold">128</span> verified vendors</p>
+                <div class="flex items-center space-x-2">
+                    <span class="text-sm text-gray-400">Sort by:</span>
+                    <select class="bg-transparent font-bold text-gray-900 outline-none cursor-pointer">
+                        <option>Popularity</option>
+                        <option>Rating: High to Low</option>
+                        <option>Price: Low to High</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Grid -->
+            <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+                <!-- Vendor Card 1 -->
+                <div class="vendor-card bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm">
+                    <div class="relative h-48">
+                        <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&q=80&w=400" class="w-full h-full object-cover" alt="Venue">
+                        <div class="absolute top-3 right-3 bg-white/90 backdrop-blur px-2 py-1 rounded-lg flex items-center space-x-1 shadow-sm">
+                            <i data-lucide="star" class="w-3 h-3 text-yellow-500 fill-current"></i>
+                            <span class="text-xs font-bold">4.8</span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-primary">Venue</span>
+                        <h4 class="text-lg font-bold text-gray-900 mb-1">Royal Palace Gardens</h4>
+                        <p class="text-sm text-gray-500 flex items-center mb-4">
+                            <i data-lucide="map-pin" class="w-3 h-3 mr-1"></i> Juhu, Mumbai
+                        </p>
+                        <div class="flex justify-between items-center pt-4 border-t border-gray-50">
+                            <div>
+                                <span class="text-xs text-gray-400 block">Starting at</span>
+                                <span class="font-black text-gray-900">₹2,50,000</span>
+                            </div>
+                            <button class="p-2.5 rounded-full bg-pink-50 text-primary hover:bg-primary hover:text-white transition">
+                                <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vendor Card 2 -->
+                <div class="vendor-card bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm">
+                    <div class="relative h-48">
+                        <img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&q=80&w=400" class="w-full h-full object-cover" alt="Photography">
+                        <div class="absolute top-3 right-3 bg-white/90 backdrop-blur px-2 py-1 rounded-lg flex items-center space-x-1 shadow-sm">
+                            <i data-lucide="star" class="w-3 h-3 text-yellow-500 fill-current"></i>
+                            <span class="text-xs font-bold">4.9</span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-blue-500">Photography</span>
+                        <h4 class="text-lg font-bold text-gray-900 mb-1">Candid Moments Studio</h4>
+                        <p class="text-sm text-gray-500 flex items-center mb-4">
+                            <i data-lucide="map-pin" class="w-3 h-3 mr-1"></i> Bandra, Mumbai
+                        </p>
+                        <div class="flex justify-between items-center pt-4 border-t border-gray-50">
+                            <div>
+                                <span class="text-xs text-gray-400 block">Per Day</span>
+                                <span class="font-black text-gray-900">₹85,000</span>
+                            </div>
+                            <button class="p-2.5 rounded-full bg-blue-50 text-blue-500 hover:bg-blue-500 hover:text-white transition">
+                                <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vendor Card 3 -->
+                <div class="vendor-card bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm">
+                    <div class="relative h-48">
+                        <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&q=80&w=400" class="w-full h-full object-cover" alt="Decor">
+                        <div class="absolute top-3 right-3 bg-white/90 backdrop-blur px-2 py-1 rounded-lg flex items-center space-x-1 shadow-sm">
+                            <i data-lucide="star" class="w-3 h-3 text-yellow-500 fill-current"></i>
+                            <span class="text-xs font-bold">4.7</span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-purple-500">Decor</span>
+                        <h4 class="text-lg font-bold text-gray-900 mb-1">Dream Floral Design</h4>
+                        <p class="text-sm text-gray-500 flex items-center mb-4">
+                            <i data-lucide="map-pin" class="w-3 h-3 mr-1"></i> Powai, Mumbai
+                        </p>
+                        <div class="flex justify-between items-center pt-4 border-t border-gray-50">
+                            <div>
+                                <span class="text-xs text-gray-400 block">Package starts</span>
+                                <span class="font-black text-gray-900">₹1,20,000</span>
+                            </div>
+                            <button class="p-2.5 rounded-full bg-purple-50 text-purple-500 hover:bg-purple-500 hover:text-white transition">
+                                <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Duplicate cards to show grid -->
+                <div class="vendor-card bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm">
+                    <div class="relative h-48">
+                        <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&q=80&w=400" class="w-full h-full object-cover" alt="Venue">
+                        <div class="absolute top-3 right-3 bg-white/90 backdrop-blur px-2 py-1 rounded-lg flex items-center space-x-1 shadow-sm">
+                            <i data-lucide="star" class="w-3 h-3 text-yellow-500 fill-current"></i>
+                            <span class="text-xs font-bold">4.5</span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-primary">Venue</span>
+                        <h4 class="text-lg font-bold text-gray-900 mb-1">The Grand Ballroom</h4>
+                        <p class="text-sm text-gray-500 flex items-center mb-4">
+                            <i data-lucide="map-pin" class="w-3 h-3 mr-1"></i> Worli, Mumbai
+                        </p>
+                        <div class="flex justify-between items-center pt-4 border-t border-gray-50">
+                            <div>
+                                <span class="text-xs text-gray-400 block">Starting at</span>
+                                <span class="font-black text-gray-900">₹4,00,000</span>
+                            </div>
+                            <button class="p-2.5 rounded-full bg-pink-50 text-primary hover:bg-primary hover:text-white transition">
+                                <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="mt-12 flex justify-center space-x-2">
+                <button class="w-10 h-10 rounded-lg border border-gray-200 flex items-center justify-center hover:bg-gray-50">
+                    <i data-lucide="chevron-left" class="w-4 h-4"></i>
+                </button>
+                <button class="w-10 h-10 rounded-lg bg-primary text-white font-bold">1</button>
+                <button class="w-10 h-10 rounded-lg border border-gray-200 flex items-center justify-center hover:bg-gray-50 font-bold">2</button>
+                <button class="w-10 h-10 rounded-lg border border-gray-200 flex items-center justify-center hover:bg-gray-50 font-bold">3</button>
+                <button class="w-10 h-10 rounded-lg border border-gray-200 flex items-center justify-center hover:bg-gray-50">
+                    <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white py-12 border-t border-gray-100 mt-auto">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-sm text-gray-400 font-medium">© 2025 VivaahPortal. Browse verified wedding vendors.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
